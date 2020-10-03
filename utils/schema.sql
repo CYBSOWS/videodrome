@@ -1,4 +1,4 @@
-create table movies(
+create table if not exists movies(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     fn TEXT NOT NULL,
     title TEXT,
