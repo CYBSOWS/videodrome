@@ -30,4 +30,9 @@ parseMovies [] = []
 parseMovies (x:xs) = [ doBuildMovie ( fromMaybe ("","","",[x,"666"]) (x =~~ movieRegex :: Maybe (String, String, String, [String])))] ++ parseMovies xs
 
 main :: IO ()
-main = undefined
+main = do
+    testInput <- listDirectory "/tmp/videodrome_data"
+    let movies = parseMovies testInput
+    mapM print movies
+    return ()
+
